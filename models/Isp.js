@@ -14,29 +14,30 @@ const IspSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: 'Please enter coverage area',
-    created: {
-      type: Date,
-      default: Date.now,
-    },
-
-    location: {
-      type: {
-        type: String,
-        default: 'Point',
-      },
-      coordinates: [
-        {
-          type: Number,
-          required: 'You must supply coordinates!',
-        },
-      ],
-      address: {
-        type: String,
-        required: 'You must supply an address!',
-      },
-    },
-    photo: String,
   },
+  created: {
+    type: Date,
+    default: Date.now,
+  },
+
+  location: {
+    type: {
+      type: String,
+      default: 'Point',
+    },
+    coordinates: [
+      {
+        type: Number,
+        required: 'You must supply coordinates!',
+      },
+    ],
+    address: {
+      type: String,
+      required: 'You must supply an address!',
+    },
+  },
+
+  photo: String,
   packageDetails: [
     {
       type: String,
