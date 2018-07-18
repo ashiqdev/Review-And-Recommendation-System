@@ -12,7 +12,7 @@ function autocomplete(input, latinput, lnginput) {
   });
 
   // if someone hit enter on the address field, dont submit the form
-  input.on('keydown', (e) => {
+  input.on('keydown', e => {
     if (e.keyCode === 13) {
       e.preventDefault();
     }
