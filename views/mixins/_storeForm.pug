@@ -14,12 +14,275 @@ mixin storeForm(store = {})
       img(src=`/uploads/${store.photo}`, alt=store.name width=200)
 
     //- Menu
-    label(for="menu") Menu
-    textarea(name="menu", cols="30", rows="7")= store.menu
+    h1 Menus
+    label(for="packages") Menu1
+    input(type="text" id="" name="menu[0]" value=(store.menu && store.menu[0]))
+
+    label(for="packages") Menu2
+    input(type="text" id="" name="menu[1]" value=(store.menu && store.menu[1]))
+
+    label(for="packages") Menu3
+    input(type="text" id="" name="menu[2]" value=(store.menu && store.menu[2]))
+
+    label(for="packages") Menu4
+    input(type="text" id="" name="menu[3]" value=(store.packages && store.menu[3]))
+
+    label(for="packages") Menu5
+    input(type="text" id="" name="menu[4]" value=(store.packages && store.menu[4]))
 
     //-Opening Hour
-    label(for="menu") Opening Hours
-    textarea(name="opening_hour", cols="30", rows="7")= store.opening_houra
+    h1 Opening Hours
+    
+    //- For Satuday
+    select(name="opening_hour[0]")
+      option(value=(store.opening_hour && store.opening_hour[0])) Satuday
+      option(value=(store.opening_hour && store.opening_hour[0])) Sunday 
+      option(value=(store.opening_hour && store.opening_hour[0])) Monday
+      option(value=(store.opening_hour && store.opening_hour[0])) Tuesday
+      option(value=(store.opening_hour && store.opening_hour[0])) Wednesday
+      option(value=(store.opening_hour && store.opening_hour[0])) Thursday
+      option(value=(store.opening_hour && store.opening_hour[0])) Friday
+    
+    //- Opening time
+    select(name="opening_hour[0]")
+        option(value=(store.opening_hour && store.opening_hour[0])) 12 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 12.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 1 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 1.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 2 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 2.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 3.00 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 3.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 4 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 4.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 5 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 5.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 6 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 6.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 7 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 7.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 8 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 8.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 9 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 9.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 10 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 10.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 11 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 11.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 12 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 12.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 1 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 1.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 2 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 2.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 3 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 3.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 4 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 4.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 5 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 5.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 6 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 6.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 7 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 7.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 8 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 8.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 9 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 9.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 10 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 10.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 11 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 11.30 pm
+    
+    //-Closing time
+    select(name="opening_hour[0]")
+        option(value=(store.opening_hour && store.opening_hour[0])) 12 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 12.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 1 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 1.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 2 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 2.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 3.00 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 3.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 4 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 4.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 5 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 5.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 6 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 6.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 7 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 7.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 8 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 8.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 9 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 9.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 10 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 10.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 11 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 11.30 am
+        option(value=(store.opening_hour && store.opening_hour[0])) 12 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 12.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 1 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 1.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 2 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 2.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 3 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 3.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 4 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 4.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 5 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 5.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 6 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 6.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 7 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 7.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 8 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 8.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 9 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 9.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 10 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 10.30 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 11 pm
+        option(value=(store.opening_hour && store.opening_hour[0])) 11.30 pm
+    
+    <br />
+
+    //-For Sunday
+    select(name="opening_hour[1]")
+      option(value=(store.opening_hour && store.opening_hour[1]) ) Sunday
+      option(value=(store.opening_hour && store.opening_hour[1])) Saturday
+      option(value=(store.opening_hour && store.opening_hour[1])) Monday
+      option(value=(store.opening_hour && store.opening_hour[1])) Tuesday
+      option(value=(store.opening_hour && store.opening_hour[1])) Wednesday
+      option(value=(store.opening_hour && store.opening_hour[1])) Thursday
+      option(value=(store.opening_hour && store.opening_hour[1])) Friday
+    //-Opening Type
+    select(name="opening_hour[1]")
+        option(value=(store.opening_hour && store.opening_hour[1])) 12 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 12.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 1 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 1.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 2 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 2.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 3.00 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 3.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 4 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 4.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 5 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 5.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 6 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 6.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 7 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 7.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 8 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 8.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 9 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 9.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 10 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 10.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 11 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 11.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 12 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 12.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 1 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 1.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 2 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 2.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 3 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 3.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 4 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 4.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 5 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 5.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 6 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 6.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 7 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 7.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 8 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 8.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 9 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 9.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 10 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 10.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 11 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 11.30 pm
+
+    select(name="opening_hour[1]")
+        option(value=(store.opening_hour && store.opening_hour[1])) 12 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 12.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 1 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 1.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 2 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 2.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 3.00 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 3.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 4 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 4.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 5 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 5.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 6 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 6.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 7 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 7.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 8 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 8.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 9 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 9.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 10 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 10.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 11 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 11.30 am
+        option(value=(store.opening_hour && store.opening_hour[1])) 12 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 12.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 1 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 1.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 2 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 2.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 3 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 3.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 4 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 4.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 5 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 5.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 6 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 6.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 7 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 7.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 8 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 8.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 9 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 9.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 10 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 10.30 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 11 pm
+        option(value=(store.opening_hour && store.opening_hour[1])) 11.30 pm <br />
+
+    
+
+      
+
+
+
+
+
+
+    //- label(for="Sunday") Sunday
+    //- input(type="text" id="" name="opening_hour[1]" value=(store.opening_hour && store.opening_hour[0]))
+
+    //- label(for="Saturday") Monday
+    //- input(type="text" id="" name="opening_hour[2]" value=(store.opening_hour && store.opening_hour[0]))
+
+    //- label(for="Tuesday") Tuesday
+    //- input(type="text" id="" name="opening_hour[3]" value=(store.opening_hour && store.opening_hour[0]))
+
+    //- label(for="Wednesday") Wednesday
+    //- input(type="text" id="" name="opening_hour[4]" value=(store.opening_hour && store.opening_hour[0]))
+
+    //- label(for="Thursday") Thursday
+    //- input(type="text" id="" name="opening_hour[5]" value=(store.opening_hour && store.opening_hour[0]))
+
+    //- label(for="Friday") Friday
+    //- input(type="text" id="" name="opening_hour[6]" value=(store.opening_hour && store.opening_hour[0]))
     
 
     //- address, lng and lat
@@ -32,14 +295,21 @@ mixin storeForm(store = {})
     label(for="lat") Address Lat
     input(type="text" id="lat" name="location[coordinates][1]" value=(store.location && store.location.coordinates[1]) required)
     
+    
     -const choices = ["Wifi","Open Late","Family Friendly","Vegatarian","Licensed"];
 
     -const tags = store.tags || []
 
+    
     ul.tags
       each choice in choices
         .tag.tag__choice
           input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
           label(for="choice") #{choice}
 
-    input(type="submit" value="save->" class="button")
+    
+
+
+    input(type="submit" value="save↪" class="button")
+
+    

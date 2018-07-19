@@ -9,12 +9,12 @@ const ispController = require('../controllers/ispController');
 
 // router.get('/', catchErrors(storeController.getStores));
 router.get('/stores', catchErrors(storeController.getStores));
-router.get('/isps', catchErrors(ispController.getStores));
+router.get('/isps', catchErrors(ispController.getIsps));
 
 // শুধু স্টোর মালিক দের জন্য
-router.get('/add', storeController.addStore);
+router.get('/stores/add', storeController.addStore);
 // শুধু স্টোর মালিক দের জন্য
-router.get('/isps/add', ispController.addStore);
+router.get('/isps/add', ispController.addIsp);
 
 // ইনিশিয়ালি আমরা(ডেভেলপার) স্টোর সাবমিট এর জন্য ব্যবহার করব।
 router.post(
@@ -24,16 +24,11 @@ router.post(
   catchErrors(storeController.createStore)
 );
 // ইনিশিয়ালি আমরা(ডেভেলপার) স্টোর সাবমিট এর জন্য ব্যবহার করব।
-router.post(
-  '/isps/add',
-  ispController.upload,
-  catchErrors(ispController.resize),
-  catchErrors(ispController.createStore)
-);
+router.post('/isps/add', ispController.upload, catchErrors(ispController.resize), catchErrors(ispController.createIsp));
 
 // শুধু স্টোর মালিক দের জন্য
 router.get('/stores/:id/edit', catchErrors(storeController.editStore));
-router.get('/isps/:id/edit', catchErrors(ispController.editStore));
+router.get('/isps/:id/edit', catchErrors(ispController.editIsp));
 
 // শুধু স্টোর মালিক দের জন্য
 router.post(
@@ -48,7 +43,17 @@ router.post(
   '/isps/add/:id',
   storeController.upload,
   catchErrors(storeController.resize),
-  catchErrors(ispController.updateStore)
+  catchErrors(ispController.updateIsp)
 );
+
+// get store by their slug
+router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
+router.get('/isp/:slug', catchErrors(ispController.getIspBySlug));
+
+// get stores by their tag
+router.get('/stores/tags', catchErrors(storeController.getStoresByTag));
+router.get('/stores/tags/:tag', catchErrors(storeController.getStoresByTagName));
+router.get('/isps/tags', catchErrors(ispController.getIspsByTag));
+router.get('/isps/tags/:tag', catchErrors(ispController.getIspsByTagName));
 
 module.exports = router;

@@ -6,9 +6,22 @@ mixin ispForm(store = {})
     label(for="coverageArea") Coverage Area
     textarea(name="coverageArea", cols="30", rows="10")= store.coverageArea
 
-     //- Menu
-    label(for="packages") Package Details
-    textarea(name="packageDetails", cols="30", rows="7")= store.packageDetails
+     //- Packages
+    label(for="packages") Package1
+    input(type="text" id="" name="packages[0]" value=(store.packages && store.packages[0]))
+
+    label(for="packages") Package2
+    input(type="text" id="" name="packages[1]" value=(store.packages && store.packages[1]))
+
+    label(for="packages") Package3
+    input(type="text" id="" name="packages[2]" value=(store.packages && store.packages[2]))
+
+    label(for="packages") Package4
+    input(type="text" id="" name="packages[3]" value=(store.packages && store.packages[3]))
+
+    label(for="packages") Package5
+    input(type="text" id="" name="packages[4]" value=(store.packages && store.packages[4]))
+
 
     //- label(for="Package Amount") Package Amount
     //- input(type="text" id="lat" name="packageAmount" value=(store.packageAmount) required)
@@ -37,6 +50,18 @@ mixin ispForm(store = {})
 
     label(for="lat") Address Lat
     input(type="text" id="lat" name="location[coordinates][1]" value=(store.location && store.location.coordinates[1]) required)
+
+    -const choices = ["Real Ip","Shared Ip", "Optical Fiber"];
+
+    -const tags = store.tags || []
+
+    ul.tags
+      each choice in choices
+        .tag.tag__choice
+          input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
+          label(for="choice") #{choice}
+
+    input(type="submit" value="save↪" class="button")
     
     //- -const choices = ["Wifi","Open Late","Family Friendly","Vegatarian","Licensed"];
 
@@ -48,4 +73,4 @@ mixin ispForm(store = {})
     //-       input(type="checkbox" id=choice value=choice name="tags" checked=(tags.includes(choice)))
     //-       label(for="choice") #{choice}
 
-    input(type="submit" value="save->" class="button")
+  

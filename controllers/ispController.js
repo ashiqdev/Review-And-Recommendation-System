@@ -40,48 +40,88 @@ exports.resize = async (req, res, next) => {
   next();
 };
 
-exports.addStore = (req, res) => {
+exports.addIsp = (req, res) => {
   res.render('editIsp', {
     title: 'Add Your ISP',
   });
 };
 
-exports.createStore = async (req, res) => {
-  const store = await new Isp(req.body).save();
-  res.json(store);
+exports.createIsp = async (req, res) => {
+  const isp = await new Isp(req.body).save();
+  res.json(isp);
 };
 
-exports.getStores = async (req, res) => {
-  // Query the db for list of all stores
-  const stores = await Isp.find();
-  res.json(stores);
+exports.getIsps = async (req, res) => {
+  // Query the db for list of all isps
+  const isps = await Isp.find();
+  res.json(isps);
 };
 
-exports.editStore = async (req, res) => {
-  // Find the store given the id
-  const store = await Isp.findOne({
+exports.editIsp = async (req, res) => {
+  // Find the isp given the id
+  const isp = await Isp.findOne({
     _id: req.params.id,
   });
   // Confirm that they are the owner
 
   // Render form
   res.render('editIsp', {
-    title: `Edit ${store.name}`,
-    store,
+    title: `Edit ${isp.name}`,
+    isp,
   });
 };
 
-exports.updateStore = async (req, res) => {
-  // find and update the store
-  const store = await Isp.findOneAndUpdate(
+exports.updateIsp = async (req, res) => {
+  // find and update the isp
+  const isp = await Isp.findOneAndUpdate(
     {
       _id: req.params.id,
     },
     req.body,
     {
-      new: true, // return the new store instead of the old one
+      new: true, // return the new isp instead of the old one
       runValidators: true,
     }
   ).exec();
-  res.json(store);
+  res.json(isp);
+};
+
+exports.getIspBySlug = async (req, res, next) => {
+  const isp = await Isp.findOne({
+    slug: req.params.slug,
+  });
+
+  if (!isp) return next();
+
+  res.json(isp);
+};
+
+exports.getIspsByTag = async (req, res) => {
+  const tagQuery = req.params.tag || {
+    $exists: true,
+    $ne: [],
+  };
+
+  const tagsPromise = Isp.getTagsList();
+  const ispsPromise = Isp.find({
+    tags: tagQuery,
+  });
+  const [tags, isps] = await Promise.all([tagsPromise, ispsPromise]);
+
+  res.json(tags);
+};
+
+exports.getIspsByTagName = async (req, res) => {
+  const tagQuery = req.params.tag || {
+    $exists: true,
+    $ne: [],
+  };
+
+  const tagsPromise = Isp.getTagsList();
+  const ispsPromise = Isp.find({
+    tags: tagQuery,
+  });
+  const [tags, isps] = await Promise.all([tagsPromise, ispsPromise]);
+
+  res.json(isps);
 };
