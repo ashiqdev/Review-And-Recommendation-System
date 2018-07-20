@@ -1,5 +1,5 @@
 mixin storeForm(store = {})
-   form(action=`/add/${store._id || ''}` method="POST",class="card" enctype="multipart/form-data")
+   form(action=`/stores/add/${store._id || ''}` method="POST",class="card" enctype="multipart/form-data")
     label(for="name") Name
     input(type="text" name="name" value=store.name)
 
