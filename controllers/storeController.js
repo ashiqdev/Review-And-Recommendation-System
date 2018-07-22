@@ -50,11 +50,11 @@ exports.createStore = async (req, res) => {
   res.json(store);
 };
 
-exports.getStores = async (req, res) => {
-  // Query the db for list of all stores
-  const stores = await Store.find();
-  res.json(stores);
-};
+// exports.getStores = async (req, res) => {
+//   // Query the db for list of all stores
+//   const stores = await Store.find();
+//   res.json(stores);
+// };
 
 exports.editStore = async (req, res) => {
   // Find the store given the id
