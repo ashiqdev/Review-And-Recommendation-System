@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
@@ -11,6 +11,7 @@ const promisify = require('es6-promisify');
 const flash = require('connect-flash');
 const expressValidator = require('express-validator');
 const routes = require('./routes/index');
+const apiRoutes = require('./apiRoutes/store'); 
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 
@@ -68,6 +69,9 @@ app.use((req, res, next) => {
 
 // After allllll that above middleware, we finally handle our own routes!
 app.use('/', routes);
+
+//Api Routes
+app.use('/api/stores', apiRoutes); 
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
