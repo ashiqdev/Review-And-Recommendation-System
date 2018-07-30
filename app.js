@@ -1,4 +1,4 @@
-/* eslint-disable */
+const config = require('config');
 const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
@@ -11,11 +11,18 @@ const promisify = require('es6-promisify');
 const flash = require('connect-flash');
 const expressValidator = require('express-validator');
 const routes = require('./routes/index');
+const apiRoutes = require('./apiRoutes/store'); 
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 
 // create our Express app
 const app = express();
+
+// jwtprivate key cheeck
+if (!config.get('jwtPrivateKey')) {
+  console.error('FATAL ERROR: jwtPrivateKey is not defined.');
+  process.exit(1);
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our pug files
@@ -68,6 +75,9 @@ app.use((req, res, next) => {
 
 // After allllll that above middleware, we finally handle our own routes!
 app.use('/', routes);
+
+//Api Routes
+app.use('/api/stores', apiRoutes); 
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
