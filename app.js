@@ -1,4 +1,4 @@
-
+const config = require('config');
 const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
@@ -17,6 +17,12 @@ const errorHandlers = require('./handlers/errorHandlers');
 
 // create our Express app
 const app = express();
+
+// jwtprivate key cheeck
+if (!config.get('jwtPrivateKey')) {
+  console.error('FATAL ERROR: jwtPrivateKey is not defined.');
+  process.exit(1);
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our pug files

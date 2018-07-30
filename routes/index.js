@@ -5,6 +5,8 @@ const router = express.Router();
 const { catchErrors } = require('../handlers/errorHandlers');
 
 const storeController = require('../controllers/storeController');
+const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 // const ispController = require('../controllers/ispController');
 
 // router.get('/', catchErrors(storeController.getStores));
@@ -47,13 +49,23 @@ router.post(
 // );
 
 // get store by their slug
-router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
-// router.get('/isp/:slug', catchErrors(ispController.getIspBySlug));
+// router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
+// // router.get('/isp/:slug', catchErrors(ispController.getIspBySlug));
 
-// get stores by their tag
-router.get('/stores/tags', catchErrors(storeController.getStoresByTag));
-router.get('/stores/tags/:tag', catchErrors(storeController.getStoresByTagName));
+// // get stores by their tag
+// router.get('/stores/tags', catchErrors(storeController.getStoresByTag));
+// router.get('/stores/tags/:tag', catchErrors(storeController.getStoresByTagName));
 // router.get('/isps/tags', catchErrors(ispController.getIspsByTag));
 // router.get('/isps/tags/:tag', catchErrors(ispController.getIspsByTagName));
+
+
+// auth and authorization Route 
+
+router.post('/register',
+  catchErrors(userController.validateRegister),
+  catchErrors(userController.register)
+);
+
+router.post('/login',catchErrors(authController.login));
 
 module.exports = router;

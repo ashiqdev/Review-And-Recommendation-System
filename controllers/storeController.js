@@ -87,42 +87,42 @@ exports.updateStore = async (req, res) => {
   // res.redirect(`/stores/${store._id}/edit`);
 };
 
-exports.getStoreBySlug = async (req, res, next) => {
-  const store = await Store.findOne({
-    slug: req.params.slug,
-  });
+// exports.getStoreBySlug = async (req, res, next) => {
+//   const store = await Store.findOne({
+//     slug: req.params.slug,
+//   });
 
-  if (!store) return next();
+//   if (!store) return next();
 
-  res.json(store);
-};
+//   res.json(store);
+// };
 
-exports.getStoresByTag = async (req, res) => {
-  const tagQuery = req.params.tag || {
-    $exists: true,
-    $ne: [],
-  };
+// exports.getStoresByTag = async (req, res) => {
+//   const tagQuery = req.params.tag || {
+//     $exists: true,
+//     $ne: [],
+//   };
 
-  const tagsPromise = Store.getTagsList();
-  const storesPromise = Store.find({
-    tags: tagQuery,
-  });
-  const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
+//   const tagsPromise = Store.getTagsList();
+//   const storesPromise = Store.find({
+//     tags: tagQuery,
+//   });
+//   const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
 
-  res.json(tags);
-};
+//   res.json(tags);
+// };
 
-exports.getStoresByTagName = async (req, res) => {
-  const tagQuery = req.params.tag || {
-    $exists: true,
-    $ne: [],
-  };
+// exports.getStoresByTagName = async (req, res) => {
+//   const tagQuery = req.params.tag || {
+//     $exists: true,
+//     $ne: [],
+//   };
 
-  const tagsPromise = Store.getTagsList();
-  const storesPromise = Store.find({
-    tags: tagQuery,
-  });
-  const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
+//   const tagsPromise = Store.getTagsList();
+//   const storesPromise = Store.find({
+//     tags: tagQuery,
+//   });
+//   const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
 
-  res.json(stores);
-};
+//   res.json(stores);
+// };

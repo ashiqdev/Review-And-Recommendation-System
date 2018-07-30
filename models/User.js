@@ -1,46 +1,46 @@
-const jwt = require('jsonwebtoken');
-const Joi = require('joi');
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const config = require('config');
+const Schema = mongoose.Schema;
+const md5 = require('md5');
+const validator = require('validator');
+const mongodbErrorHandler = require('mongoose-mongodb-errors');
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 50
-  },
+const userSchema = new Schema({
   email: {
     type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 255,
-    unique: true
+    unique: true,
+    lowercase: true,
+    trim: true,
+    validate: [validator.isEmail, 'Invalid Email Address'],
+    required: 'Please Supply an email address'
   },
-  password: {
+  name: {
     type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 1024
+    required: 'Please supply a name',
+    trim: true
   },
-  isAdmin: Boolean
+   password: {
+     type: String,
+     required: true,
+     minlength: 5,
+     maxlength: 1024
+   }
+  //  ,
+  // resetPasswordToken: String,
+  // resetPasswordExpires: Date,
 });
 
+// userSchema.virtual('gravatar').get(function () {
+//   const hash = md5(this.email);
+//   return `https://gravatar.com/avatar/${hash}?s=200`;
+// });
+
+userSchema.plugin(mongodbErrorHandler);
+
 userSchema.methods.generateAuthToken = function() { 
-  const token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, 'helloworld');
+  const token = jwt.sign({ _id: this._id }, config.get('jwtPrivateKey'));
   return token;
 }
 
-const User = mongoose.model('User', userSchema);
-
-function validateUser(user) {
-  const schema = {
-    name: Joi.string().min(5).max(50).required(),
-    email: Joi.string().min(5).max(255).required().email(),
-    password: Joi.string().min(5).max(255).required()
-  };
-
-  return Joi.validate(user, schema);
-}
-
-exports.User = User; 
-exports.validate = validateUser;
+module.exports = mongoose.model('User', userSchema);
