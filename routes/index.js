@@ -10,7 +10,7 @@ const authController = require('../controllers/authController');
 // const ispController = require('../controllers/ispController');
 
 // router.get('/', catchErrors(storeController.getStores));
-router.get('/stores', catchErrors(storeController.getStores));
+// router.get('/stores', catchErrors(storeController.getStores));
 // router.get('/isps', catchErrors(ispController.getIsps));
 
 // শুধু স্টোর মালিক দের জন্য
@@ -20,7 +20,7 @@ router.get('/stores/add', storeController.addStore);
 
 // ইনিশিয়ালি আমরা(ডেভেলপার) স্টোর সাবমিট এর জন্য ব্যবহার করব।
 router.post(
-  '/add',
+  '/stores/add',
   storeController.upload,
   catchErrors(storeController.resize),
   catchErrors(storeController.createStore)
@@ -32,7 +32,7 @@ router.post(
 router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 // router.get('/isps/:id/edit', catchErrors(ispController.editIsp));
 
-// শুধু স্টোর মালিক দের জন্য
+// শুধু স্টোর মালিক দের জন্য update route
 router.post(
   '/stores/add/:id',
   storeController.upload,
