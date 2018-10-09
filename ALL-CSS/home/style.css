@@ -2071,6 +2071,7 @@ pre.error {
   flex-direction: column;
   flex-wrap: wrap;
  
+ 
 
   
   
@@ -2079,8 +2080,9 @@ pre.error {
 }
 
 .f-child {
-  margin-top: 0;
+  /* margin-top: 2rem; */
   margin-bottom: 0;
+  font-size: 1.5rem;
 }
 
 
