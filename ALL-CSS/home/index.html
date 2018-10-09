@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
   <title>Document</title>
 </head>
 
@@ -31,8 +33,9 @@
               </g>
             </svg>
           </a></li>
-        <li class="nav__item"><a class="nav__link" href="../ISP/index.html"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+        <li class="nav__item"><a class="nav__link" href="../ISP/index.html"><svg xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512"
+              enable-background="new 0 0 512 512" xml:space="preserve">
               <g>
                 <path d="M469,493.6V188c35.5-10.9,43.7-45,37.7-68.9L475.3,2H36.7L5.2,119.3C-0.7,143,7.9,177.1,43,188v305.6H2V510h508v-16.4H469z    M452.6,174.1c-22.6,0-41-18.4-41-41v-32.8h73.1l6.2,22.9C496.7,144,483.9,174.1,452.6,174.1z M116.7,100.3h81.9v32.8   c0,22.6-18.4,41-41,41c-22.6,0-41-18.4-41-41V100.3z M215,100.3H297v32.8c0,22.6-18.4,41-41,41c-22.6,0-41-18.4-41-41V100.3z    M313.4,100.3h81.9v32.8c0,22.6-18.4,41-41,41c-22.6,0-41-18.4-41-41V100.3z M49.3,18.4h413.5l17.6,65.5H31.7L49.3,18.4z    M21.1,123.4l6.2-23.1h73.1v32.8c0,22.6-18.4,41-41,41C28,174.1,15.3,143.1,21.1,123.4z M297,493.6v-213h114.7v213H297z    M452.6,493.6h-24.6V264.2H280.6v229.4H59.4V190.5c20.8,0,39.1-11.2,49.2-27.8c10,16.7,28.3,27.8,49.2,27.8   c20.8,0,39.1-11.2,49.2-27.8c10,16.7,28.3,27.8,49.2,27.8c20.8,0,39.1-11.2,49.2-27.8c10,16.7,28.3,27.8,49.2,27.8   c20.8,0,39.1-11.2,49.2-27.8c10,16.7,28.3,27.8,49.2,27.8V493.6z"></path>
                 <path d="M83.9,469h163.9V305.2H83.9V469z M100.3,395.3h57.4v57.4h-57.4V395.3z M174.1,452.6v-57.4h57.4v57.4H174.1z M231.4,378.9   h-57.4v-57.4h57.4V378.9z M157.7,321.5v57.4h-57.4v-57.4H157.7z"></path>
@@ -112,23 +115,146 @@
     </nav>
   </header>
 
-  <div>
+
+  <div class="bimage__section">
+
+
+    <div class="s013">
+      <form>
+        <fieldset>
+          <legend>Find Local Businesses in Dhaka</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="left">
+            <div class="input-wrap first">
+              <div class="input-field first">
+                <label>WHAT</label>
+                <input type="text" placeholder="ex: food, service, isp, restaurant" />
+              </div>
+            </div>
+            <div class="input-wrap second">
+              <span><i class="fas fa-map-marker"></i></span>
+              <input class="search__input" type="text" placeholder=" Location" name="search">
+
+            </div>
+
+            <div class="search__results"></div>
+          </div>
+          <button class="btn-search" type="button">SEARCH</button>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <ul class="items">
+        <li class="item"><i class="fas fa-utensils"></i><a href=""> Restaurants</a></li>
+        <li class="item"><i class="fas fa-wifi"></i><a href=""> Isp</a></li>
+        <li class="item"><i class="fas fa-truck"></i><a href=""> Delivery</a></li>
+        <li class="item"><i class="fas fa-shopping-cart"></i><a href=""> Shopping</a></li>
+      </ul>
+    </div>
 
   </div>
 
-  <main class="">
-    <div id="bimage__section">
+  <div class="catagory__section">
+    <p class="catagory__header">Find the best Businesses in Town</p>
+    <ul class="catagories">
+      <li class="catagory">
+        <a href="">
+          <div class="catagory__image catagory__image-1"></div>
+          <p class="catagory__name">Restaurants</p>
+        </a>
 
-      <!-- image -->
-      <div class="main-form">
-        <h3>Find local Businesses in Dhaka</h3>
-        <input type="text" name="q" id="search" class="mega_form" placeholder="Try &quot;Restaurants&quot; or &quot;Isps&quot and more..."
-          autocomplete="off">
+      </li>
+      <li class="catagory">
+        <a href="">
+          <div class="catagory__image catagory__image-2 "></div>
+          <p class="catagory__name">ISP</p>
+        </a>
+      </li>
+      <li class="catagory">
+        <a href="">
+          <div class="catagory__image catagory__image-3"></div>
+          <p class="catagory__name">Delivery</p>
+        </a>
+      </li>
+      <li class="catagory">
+        <a href="">
+          <div class="catagory__image catagory__image-4"></div>
+          <p class="catagory__name">Shopping</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="tag-section">
+    <div class="content">
+      <div class="inner">
+        <h1 class="tag-header">Browse Businesses By Tag</h1>
+        <ul class="tags">
+          <li class="tag"><a class="tag__link" href="/tags/Licensed"><span class="tag__text">Licensed</span><span class="tag__count">10</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Open Late"><span class="tag__text">Open Late</span><span
+                class="tag__count">8</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Vega"><span class="tag__text">Vegetarian</span><span class="tag__count">6</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Family Friendly"><span class="tag__text">Family Friendly</span><span
+                class="tag__count">5</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Wifi"><span class="tag__text">Wifi</span><span class="tag__count">4</span></a></li>
+
+          <li class="tag"><a class="tag__link" href="/tags/Wifi"><span class="tag__text">Takes Reservations</span><span
+                class="tag__count">4</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Wifi"><span class="tag__text">Shared IP</span><span class="tag__count">2</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Wifi"><span class="tag__text">Real Ip</span><span class="tag__count">4</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Wifi"><span class="tag__text">Optical Fiber</span><span
+                class="tag__count">4</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Wifi"><span class="tag__text">Parking</span><span class="tag__count">4</span></a></li>
+          <li class="tag"><a class="tag__link" href="/tags/Wifi"><span class="tag__text">Air Conditioned</span><span
+                class="tag__count">4</span></a></li>
+
+
+
+
+        </ul>
       </div>
-
     </div>
 
-  </main>
+  </div>
+
+
+  <div class="footer-section">
+    <ul class="footer-ul">
+      <li class="footer-item">
+        <div class="f-head">Links
+          <p class="f-child"><a href="">Add your business</a></p>
+          <p class="f-child"><a href="#">Services</a></p>
+        </div>
+      </li>
+      <li class="footer-item">
+        <div class="f-head">XYZ
+          <p class="f-child"><a href="#">About us</a></p>
+          <p class="f-child"><a href="#">Contact us</a></p>
+        </div>
+      </li>
+      <li class="footer-item">
+        <div class="f-head">Others
+          <p class="f-child"><a href="#">&copy;Terms of use</a></p>
+          <p class="f-child"><a href="#">Privacy policy</a></p>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- <script src="index.js"></script> -->
+
 </body>
 
 </html>
