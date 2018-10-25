@@ -37,10 +37,10 @@ http://localhost:7777/api/account/reset/:token
 ##Routes
 ============ 
 
-//-------##For Any Users---------------------- 
+-------##For Any Users---------------------- 
 
 // ##Display all stores (GET) 
- localhost:7777/api/stores 
+localhost:7777/api/stores 
 
 // ##Display store by ther slug (seo friendly name) (GET)
  http://localhost:7777/api/store/3-food 
