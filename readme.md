@@ -14,15 +14,15 @@ Members are:
 Login and Account Route 
 ========================== 
 
-// ##Register User (POST) 
+##Register User (POST) 
 http://localhost:7777/api/register 
 ------------------------------------------- 
 
-// ##Login User (POST) 
+ ##Login User (POST) 
 http://localhost:7777/api/login 
 ------------------------------------------- 
 
-// ##Logout User (GET) 
+##Logout User (GET) 
 http://localhost:7777/api/logout 
 ------------------------------------------- 
 
